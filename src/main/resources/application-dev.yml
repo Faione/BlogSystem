@@ -1,0 +1,16 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: blog-system
+  datasource:
+    url: jdbc:mysql://192.168.133.128:3306/blog_system?characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: fhl
+    password: 123456
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:stu/swufe/fhl/blog/mapper/*Mapper.xml
+#logging:
+#  pattern:
+#    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] [%-Slevel] %logger %msg%n"
