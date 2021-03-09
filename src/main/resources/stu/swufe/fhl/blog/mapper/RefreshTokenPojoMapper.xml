@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stu.swufe.fhl.blog.dao.RefreshTokenPojoMapper">
+  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="token_key" jdbcType="VARCHAR" property="tokenKey" />
+    <result column="dirt" jdbcType="BIT" property="dirt" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    <result column="refresh_token" jdbcType="LONGVARCHAR" property="refreshToken" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, token_key, dirt, user_id, create_date, update_date
+  </sql>
+  <sql id="Blob_Column_List">
+    refresh_token
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_refresh_token
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+<!--根据TokenKey查找-->
+  <select id="selectByTokenKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_refresh_token
+    where token_key = #{tokenKey,jdbcType=VARCHAR}
+  </select>
+
+
+  <delete id="deleteByUserId" parameterType="java.lang.String">
+    delete from tb_refresh_token
+    where  user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+
+<!--根据用户ID删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_refresh_token
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+
+  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    insert into tb_refresh_token (id, token_key, dirt, 
+      user_id, create_date, update_date, 
+      refresh_token)
+    values (#{id,jdbcType=VARCHAR}, #{tokenKey,jdbcType=VARCHAR}, #{dirt,jdbcType=BIT}, 
+      #{userId,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{refreshToken,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    insert into tb_refresh_token
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tokenKey != null">
+        token_key,
+      </if>
+      <if test="dirt != null">
+        dirt,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="refreshToken != null">
+        refresh_token,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenKey != null">
+        #{tokenKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dirt != null">
+        #{dirt,jdbcType=BIT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refreshToken != null">
+        #{refreshToken,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    update tb_refresh_token
+    <set>
+      <if test="tokenKey != null">
+        token_key = #{tokenKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dirt != null">
+        dirt = #{dirt,jdbcType=BIT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refreshToken != null">
+        refresh_token = #{refreshToken,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    update tb_refresh_token
+    set token_key = #{tokenKey,jdbcType=VARCHAR},
+      dirt = #{dirt,jdbcType=BIT},
+      user_id = #{userId,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      refresh_token = #{refreshToken,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.RefreshTokenPojo">
+    update tb_refresh_token
+    set token_key = #{tokenKey,jdbcType=VARCHAR},
+      dirt = #{dirt,jdbcType=BIT},
+      user_id = #{userId,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
