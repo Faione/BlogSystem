@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.LooperPojo;
+import stu.swufe.fhl.blog.model.LooperPojo;
 
 public interface LooperPojoMapper {
     int deleteByPrimaryKey(String id);

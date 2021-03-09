@@ -1,8 +1,7 @@
 package stu.swufe.fhl.blog.controller.portal;
 
 import org.springframework.web.bind.annotation.*;
-import stu.swufe.fhl.blog.model.pojo.CommentPojo;
-import stu.swufe.fhl.blog.model.pojo.LooperPojo;
+import stu.swufe.fhl.blog.model.CommentPojo;
 import stu.swufe.fhl.blog.response.ResponseResult;
 
 

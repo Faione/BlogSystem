@@ -1,4 +1,4 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 public class CommentPojoWithBLOBs extends CommentPojo {
     private String parentContent;

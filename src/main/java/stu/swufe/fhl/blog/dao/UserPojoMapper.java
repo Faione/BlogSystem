@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.UserPojo;
+import stu.swufe.fhl.blog.model.UserPojo;
 
 public interface UserPojoMapper {
     int deleteByPrimaryKey(String id);
@@ -10,6 +10,10 @@ public interface UserPojoMapper {
     int insertSelective(UserPojo record);
 
     UserPojo selectByPrimaryKey(String id);
+
+    int selectByName(String username);
+
+    UserPojo selectAllByName(String username);
 
     int updateByPrimaryKeySelective(UserPojo record);
 

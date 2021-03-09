@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.FriendPojo;
+import stu.swufe.fhl.blog.model.FriendPojo;
 
 public interface FriendPojoMapper {
     int deleteByPrimaryKey(String id);

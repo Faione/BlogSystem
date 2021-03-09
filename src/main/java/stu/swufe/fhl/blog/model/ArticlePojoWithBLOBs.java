@@ -1,4 +1,4 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 public class ArticlePojoWithBLOBs extends ArticlePojo {
     private String content;

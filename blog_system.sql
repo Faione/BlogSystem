@@ -11,7 +11,7 @@ use blog_system;
 CREATE TABLE `tb_user`(  
   `id` VARCHAR(20) NOT NULL COMMENT 'ID',
   `user_name` VARCHAR(32) NOT NULL COMMENT '用户名',
-  `password` VARCHAR(32) NOT NULL COMMENT '密码',
+  `password` VARCHAR(60) NOT NULL COMMENT '密码',
   `roles` VARCHAR(100) NOT NULL COMMENT '角色',
   `avatar` VARCHAR(1024) NOT NULL COMMENT '头像地址',
   `email` VARCHAR(100) COMMENT '邮箱地址',

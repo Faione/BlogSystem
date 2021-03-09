@@ -1,7 +1,7 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.ArticlePojo;
-import stu.swufe.fhl.blog.model.pojo.ArticlePojoWithBLOBs;
+import stu.swufe.fhl.blog.model.ArticlePojo;
+import stu.swufe.fhl.blog.model.ArticlePojoWithBLOBs;
 
 public interface ArticlePojoMapper {
     int deleteByPrimaryKey(String id);

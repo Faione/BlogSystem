@@ -1,17 +1,13 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 import java.util.Date;
 
-public class FriendPojo {
+public class ImagePojo {
     private String id;
 
-    private String name;
-
-    private String logo;
+    private String userId;
 
     private String url;
-
-    private Integer order;
 
     private String state;
 
@@ -27,20 +23,12 @@ public class FriendPojo {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo == null ? null : logo.trim();
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
     public String getUrl() {
@@ -49,14 +37,6 @@ public class FriendPojo {
 
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
-    }
-
-    public Integer getOrder() {
-        return order;
-    }
-
-    public void setOrder(Integer order) {
-        this.order = order;
     }
 
     public String getState() {

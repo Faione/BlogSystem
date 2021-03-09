@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo;
+import stu.swufe.fhl.blog.model.DailyViewCountPojo;
 
 public interface DailyViewCountPojoMapper {
     int deleteByPrimaryKey(String id);

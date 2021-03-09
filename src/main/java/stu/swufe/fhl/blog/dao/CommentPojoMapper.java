@@ -1,7 +1,7 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.CommentPojo;
-import stu.swufe.fhl.blog.model.pojo.CommentPojoWithBLOBs;
+import stu.swufe.fhl.blog.model.CommentPojo;
+import stu.swufe.fhl.blog.model.CommentPojoWithBLOBs;
 
 public interface CommentPojoMapper {
     int deleteByPrimaryKey(String id);

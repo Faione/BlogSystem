@@ -1,4 +1,4 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="stu.swufe.fhl.blog.dao.CategoryPojoMapper">
-  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.CategoryPojo">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
@@ -10,7 +10,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="stu.swufe.fhl.blog.model.CategoryPojo">
     <result column="description" jdbcType="LONGVARCHAR" property="description" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -31,7 +31,7 @@
     delete from tb_categories
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.CategoryPojo">
     insert into tb_categories (id, name, pinyin, 
       order, status, create_time, 
       update_time, description)
@@ -39,7 +39,7 @@
       #{order,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{description,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.CategoryPojo">
     insert into tb_categories
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -94,7 +94,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.CategoryPojo">
     update tb_categories
     <set>
       <if test="name != null">
@@ -121,7 +121,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="stu.swufe.fhl.blog.model.CategoryPojo">
     update tb_categories
     set name = #{name,jdbcType=VARCHAR},
       pinyin = #{pinyin,jdbcType=VARCHAR},
@@ -132,7 +132,7 @@
       description = #{description,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.pojo.CategoryPojo">
+  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.CategoryPojo">
     update tb_categories
     set name = #{name,jdbcType=VARCHAR},
       pinyin = #{pinyin,jdbcType=VARCHAR},

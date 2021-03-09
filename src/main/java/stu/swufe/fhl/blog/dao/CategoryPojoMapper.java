@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.CategoryPojo;
+import stu.swufe.fhl.blog.model.CategoryPojo;
 
 public interface CategoryPojoMapper {
     int deleteByPrimaryKey(String id);

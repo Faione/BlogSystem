@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="stu.swufe.fhl.blog.dao.LooperPojoMapper">
-  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.pojo.LooperPojo">
+  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.LooperPojo">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="order" jdbcType="INTEGER" property="order" />
@@ -24,7 +24,7 @@
     delete from tb_looper
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.pojo.LooperPojo">
+  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.LooperPojo">
     insert into tb_looper (id, title, order, 
       state, target_url, image_url, 
       create_time, update_time)
@@ -32,7 +32,7 @@
       #{state,jdbcType=VARCHAR}, #{targetUrl,jdbcType=VARCHAR}, #{imageUrl,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.pojo.LooperPojo">
+  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.LooperPojo">
     insert into tb_looper
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.pojo.LooperPojo">
+  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.LooperPojo">
     update tb_looper
     <set>
       <if test="title != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.pojo.LooperPojo">
+  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.LooperPojo">
     update tb_looper
     set title = #{title,jdbcType=VARCHAR},
       order = #{order,jdbcType=INTEGER},

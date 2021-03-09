@@ -1,7 +1,7 @@
 package stu.swufe.fhl.blog.controller.admin;
 
 import org.springframework.web.bind.annotation.*;
-import stu.swufe.fhl.blog.model.pojo.ImagePojo;
+import stu.swufe.fhl.blog.model.ImagePojo;
 import stu.swufe.fhl.blog.response.ResponseResult;
 
 @RestController

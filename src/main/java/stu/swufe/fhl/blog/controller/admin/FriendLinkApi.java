@@ -2,7 +2,7 @@ package stu.swufe.fhl.blog.controller.admin;
 
 
 import org.springframework.web.bind.annotation.*;
-import stu.swufe.fhl.blog.model.pojo.FriendPojo;
+import stu.swufe.fhl.blog.model.FriendPojo;
 import stu.swufe.fhl.blog.response.ResponseResult;
 
 @RestController

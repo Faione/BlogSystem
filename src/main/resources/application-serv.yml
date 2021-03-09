@@ -1,12 +1,12 @@
 server:
-  port: 9001
+  port: 9002
 spring:
   application:
     name: blog-system
   datasource:
-    url: jdbc:mysql://localhost:3306/blog_system?serverTimezone=GMT&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/health_manager?serverTimezone=GMT&characterEncoding=utf-8&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: fhl
+    username: test_user
     password: 123456
   redis:
     port: 6379

@@ -1,6 +1,6 @@
 package stu.swufe.fhl.blog.dao;
 
-import stu.swufe.fhl.blog.model.pojo.ImagePojo;
+import stu.swufe.fhl.blog.model.ImagePojo;
 
 public interface ImagePojoMapper {
     int deleteByPrimaryKey(String id);

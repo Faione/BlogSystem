@@ -1,15 +1,13 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 import java.util.Date;
 
-public class ImagePojo {
+public class LabelPojo {
     private String id;
 
-    private String userId;
+    private String name;
 
-    private String url;
-
-    private String state;
+    private Integer count;
 
     private Date createTime;
 
@@ -23,28 +21,20 @@ public class ImagePojo {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getUrl() {
-        return url;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public Date getCreateTime() {

@@ -1,13 +1,13 @@
-package stu.swufe.fhl.blog.model.pojo;
+package stu.swufe.fhl.blog.model;
 
 import java.util.Date;
 
-public class LabelPojo {
+public class SettingPojo {
     private String id;
 
-    private String name;
+    private String key;
 
-    private Integer count;
+    private String value;
 
     private Date createTime;
 
@@ -21,20 +21,20 @@ public class LabelPojo {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getKey() {
+        return key;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setKey(String key) {
+        this.key = key == null ? null : key.trim();
     }
 
-    public Integer getCount() {
-        return count;
+    public String getValue() {
+        return value;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setValue(String value) {
+        this.value = value == null ? null : value.trim();
     }
 
     public Date getCreateTime() {

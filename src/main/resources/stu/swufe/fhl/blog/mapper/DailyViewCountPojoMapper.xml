@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="stu.swufe.fhl.blog.dao.DailyViewCountPojoMapper">
-  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo">
+  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.DailyViewCountPojo">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="view_count" jdbcType="INTEGER" property="viewCount" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -20,13 +20,13 @@
     delete from tb_daily_view_count
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo">
+  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.DailyViewCountPojo">
     insert into tb_daily_view_count (id, view_count, create_time, 
       update_time)
     values (#{id,jdbcType=VARCHAR}, #{viewCount,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo">
+  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.DailyViewCountPojo">
     insert into tb_daily_view_count
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo">
+  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.DailyViewCountPojo">
     update tb_daily_view_count
     <set>
       <if test="viewCount != null">
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.pojo.DailyViewCountPojo">
+  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.DailyViewCountPojo">
     update tb_daily_view_count
     set view_count = #{viewCount,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},

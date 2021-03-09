@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="stu.swufe.fhl.blog.dao.ImagePojoMapper">
-  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.pojo.ImagePojo">
+  <resultMap id="BaseResultMap" type="stu.swufe.fhl.blog.model.ImagePojo">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="url" jdbcType="VARCHAR" property="url" />
@@ -22,7 +22,7 @@
     delete from tb_images
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.pojo.ImagePojo">
+  <insert id="insert" parameterType="stu.swufe.fhl.blog.model.ImagePojo">
     insert into tb_images (id, user_id, url, 
       state, create_time, update_time
       )
@@ -30,7 +30,7 @@
       #{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.pojo.ImagePojo">
+  <insert id="insertSelective" parameterType="stu.swufe.fhl.blog.model.ImagePojo">
     insert into tb_images
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.pojo.ImagePojo">
+  <update id="updateByPrimaryKeySelective" parameterType="stu.swufe.fhl.blog.model.ImagePojo">
     update tb_images
     <set>
       <if test="userId != null">
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.pojo.ImagePojo">
+  <update id="updateByPrimaryKey" parameterType="stu.swufe.fhl.blog.model.ImagePojo">
     update tb_images
     set user_id = #{userId,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},

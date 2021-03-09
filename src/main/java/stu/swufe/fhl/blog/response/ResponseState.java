@@ -1,18 +1,31 @@
 package stu.swufe.fhl.blog.response;
 
 public enum ResponseState {
-    SUCCESS(true, 20000, "操作成功"),
-    FALIED(false, 40000, "操作失败");
+    SUCCESS(true,20000, "操作成功"),
+    REGISTER_SUCCESS(true,20001, "注册成功"),
+    LOGIN_SUCCESS(true,20002, "登录成功"),
+    FALIED(false,40000, "操作失败")
+    ;
 
-    ResponseState(boolean success, int code, String message){
-        this.success=success;
-        this.code=code;
-        this.message=message;
+    ResponseState(boolean isSuccess, int code, String message){
+        this.isSuccess=isSuccess;
+        this.code = code;
+        this.message = message;
+
     }
+
+    public static ResponseState createFail(String msg){
+        ResponseState responseState = ResponseState.FALIED;
+        responseState.setMessage(msg);
+
+        return responseState;
+
+    }
+
 
     private int code;
     private String message;
-    private boolean success;
+    private boolean isSuccess;
 
     public int getCode() {
         return code;
@@ -31,12 +44,10 @@ public enum ResponseState {
     }
 
     public boolean isSuccess() {
-        return success;
+        return isSuccess;
     }
 
     public void setSuccess(boolean success) {
-        this.success = success;
+        isSuccess = success;
     }
-
-
 }
